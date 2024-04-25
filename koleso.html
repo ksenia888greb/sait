@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   
+    <title>BookWorld</title>
+</head>
+<body>
+    <div class="header">
+        <div class="inner">
+            <div class="logo">
+                <img src="public/logo/logo1.jpg">
+            </div>
+            <div class="headerItems">
+                <a href="index.html" class="headerItem">Главная</a>
+                <a href="onas.html" class="headerItem">О нас</a>
+                <a href="kategorii.html" class="headerItem">Категории</a>
+                <a href="akcii.html" class="headerItem">Акции</a>
+                <a href="dostavka.html" class="headerItem">Доставка</a>
+                <a href="karta.html" class="headerItem">Карта магазина</a>
+                <a href="koleso.html" class="headerItem">Отзывы</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="review">
+        <div class="review__items">
+            <img src="png/otz1.jpg" />
+            <h1>Александра П.</h1>
+            <p>
+                Отличный магазин с доступными ценами!
+            </p>
+        </div>
+        <div class="review__items">
+            <img src="png/otz2.jpg" />
+            <h1>Анастасия П.</h1>
+            <p>
+                Здесь я нашла книгу, которую искала!
+            </p>
+        </div>
+        <div class="review__items">
+            <img src="png/otz3.jpeg" />
+            <h1>Елизавета С.</h1>
+            <p>
+                Самая быстрая доставка!
+            </p>
+        </div>
+        <div class="review__button">
+            <button id="prev" onclick="previousReview()">
+                Назад
+            </button>
+
+            <button id="next" onclick="nextReview()">
+                Вперёд
+            </button>
+        </div>
+    </div>
+
+    <!--Разметка окна оформления заказа:-->
+    <div class="popup">
+        <div class="popup__container" id="popup_container">
+            <div class="popup__item">
+                <h1 class="popup__title">Оформление заказа</h1>
+            </div>
+
+            <div class="popup__item" id="popup_product_list">
+                <div class="popup__product">
+                    <div class="popup__product-wrap">
+                        <img src="./images/1.jpg"
+                             alt=""
+                             class="popup__product-image" />
+                        <h2 class="popup__product-title">
+                        </h2>
+                    </div>
+                    <div class="popup__product-wrap">
+                        <div class="popup__product-price"></div>
+                        <button class="popup__product-delete">&#10006;</button>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <h1>Введите корректные данные получателя:</h1>
+
+                <div class="anketa">
+                    <label for="last-name">Фамилия:</label>
+                    <input type="text" id="last-name" name="last-name" onchange="capitalizeText('last-name')"><br> <!-- Используется функция capitalizeText() при изменении значения поля фамилии -->
+
+                    <label for="first-name">Имя:</label>
+                    <input type="text" id="first-name" name="first-name" onchange="capitalizeText('first-name')"><br> <!-- Используется функция capitalizeText() при изменении значения поля имени -->
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" onchange="capitalizeText('email')"><br>
+                    <p><b>Способ оплаты:</b></p>
+                    <input name="sub" type="radio" value="1">Безналичный, при получении<br>
+                    <input name="sub" type="radio" value="2">Картой, при оформлении<br>
+                    <button type="button" onclick="submitForm()">Отправить</button> <!-- Выполняет функцию submitForm() при нажатии -->
+                    <button type="reset" onclick="resetForm()">Очистить</button>
+                </div>
+            </form>
+
+
+
+            <div class="popup__item">
+                <div class="popup__cost">
+                    <h2 class="popup__cost-title">Итого</h2>
+                    <output class="popup__cost-value" id="popup_cost">0</output>
+                </div>
+                <div class="popup__cost">
+                    <h2 class="popup__cost-title">Скидка</h2>
+                    <output class="popup__cost-value" id="popup_discount">0</output>
+                </div>
+                <div class="popup__cost">
+                    <h2 class="popup__cost-title">Итого со скидкой</h2>
+                    <output class="popup__cost-value" id="popup_cost_discount">
+                        0
+                    </output>
+                </div>
+            </div>
+            <button class="popup__close" id="popup_close">&#10006;</button>
+        </div>
+    </div>
+    <div id="footer">&copy; Ксения Гребенюк</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/script1.js"></script>
+</body>
+</html>
